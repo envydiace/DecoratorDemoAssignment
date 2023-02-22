@@ -9,7 +9,8 @@ public class DefaultBullet : Bullet
     {
         GameObject gameObject = Resources.Load("Prefabs/BulletDefault") as GameObject;
         var clone = GameObject.Instantiate(gameObject);
-        clone.transform.position = new Vector2(1, 1);
-        GameObject.Destroy(clone.gameObject, 0.5f);
+        clone.transform.position = new Vector2(0, 0);
+        clone.GetComponent<BulletBehavior>().SetVelo(1f);
+        GameObject.Destroy(clone.gameObject, 3);
     }
 }
